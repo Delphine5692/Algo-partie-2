@@ -39,12 +39,31 @@
 <script type="text/javascript">
     const VALID_PROMOTION_CODE = "10POUR100";
 
-    function cartValue() {
-        let articles = document.getElementById("articles");
-        let selectedArticle = articles.options[articles.selectedIndex].value;
+        function cartValue() {
+            let articles = document.getElementById("articles");
+            let selectedArticle = articles.options[articles.selectedIndex].value;
+            let promoCode = document.getElementById("promotion").value;
+            let price = 0;
 
-        // CODE HERE !
-    }
+            // Détermine le prix de l'article sélectionné
+            if (selectedArticle === "one") {
+                price = 30;
+            } else if (selectedArticle === "two") {
+                price = 50;
+            } else {
+                alert("Veuillez sélectionner un article");
+                return;
+            }
+
+            // Applique la réduction si le code promo est valide
+            if (promoCode === VALID_PROMOTION_CODE) {
+                price *= 0.9; // Applique une réduction de 10% - 0.9 correspond à 90% du prix de l'article x 0.9
+            }
+
+            // Afficher la valeur du panier
+            alert(`La valeur de votre panier est de ${price.toFixed(2)}€`); //toFixed pour avoir deux chiffres après la virgule
+        }
+    
 </script>
 </body>
 </html>

@@ -61,21 +61,60 @@
 </div>
 
 <script type="text/javascript">
+
     function doYouLikeIt() {
-        // CODE HERE !
+        console.log(isSalty()) //test sur la console web
+
+        // Mettre le poison en premier, sinon il ne testera pas les autres options
+        if (isPoisoned()){
+            alert("Game Over..!");
+        }
+
+        else if (isSalty() && isSweet()){
+            alert("Beurk.. c'est pas bon!");
+        }
+
+        else if (isSalty()){
+            alert("Hum la bonne sou-soupe salée !");
+        }
+
+        else if (isSweet()){
+            alert("Hum la bonne sou-soupe sucrée !");
+        }
     }
 
+    // Définir tout les alimennts salées et s'ils sont cochés, dire oui/true
     function isSalty() {
         let carrots = document.getElementById("carrots").checked;
-        // CODE HERE !
+        let tomates = document.getElementById("tomatoes").checked;
+        let potatoes = document.getElementById("potatoes").checked;
+
+        if (carrots || tomates || potatoes){
+            return true;
+        }
+        return false;
     }
 
+    // Définir tout les alimennts sucrées et s'ils sont cochés, dire oui/true
     function isSweet() {
-        // CODE HERE !
+        let black_chocolate = document.getElementById("black-chocolate").checked;
+        let white_chocolate = document.getElementById("white-chocolate").checked;
+
+        if (black_chocolate || white_chocolate){
+            return true;
+        }
+        return false;
     }
 
+    // Définir tout les alimennts toxiques et s'ils sont cochés, dire oui/true
     function isPoisoned() {
-        // CODE HERE !
+        let vitriol = document.getElementById("vitriol").checked;
+        let cyanide = document.getElementById("cyanide").checked;
+
+        if (vitriol || cyanide){
+            return true;
+        }
+        return false;
     }
 </script>
 </body>
