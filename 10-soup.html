@@ -81,6 +81,10 @@
         else if (isSweet()){
             alert("Hum la bonne sou-soupe sucrée !");
         }
+        
+        else {
+            alert("J'ai faim");
+        }
     }
 
     // Définir tout les alimennts salées et s'ils sont cochés, dire oui/true
@@ -89,10 +93,7 @@
         let tomates = document.getElementById("tomatoes").checked;
         let potatoes = document.getElementById("potatoes").checked;
 
-        if (carrots || tomates || potatoes){
-            return true;
-        }
-        return false;
+        return (carrots || tomates || potatoes);
     }
 
     // Définir tout les alimennts sucrées et s'ils sont cochés, dire oui/true
@@ -100,10 +101,7 @@
         let black_chocolate = document.getElementById("black-chocolate").checked;
         let white_chocolate = document.getElementById("white-chocolate").checked;
 
-        if (black_chocolate || white_chocolate){
-            return true;
-        }
-        return false;
+        return (black_chocolate || white_chocolate);
     }
 
     // Définir tout les alimennts toxiques et s'ils sont cochés, dire oui/true
@@ -111,10 +109,7 @@
         let vitriol = document.getElementById("vitriol").checked;
         let cyanide = document.getElementById("cyanide").checked;
 
-        if (vitriol || cyanide){
-            return true;
-        }
-        return false;
+        return (vitriol || cyanide);
     }
 </script>
 </body>
