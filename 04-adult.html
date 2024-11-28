@@ -34,11 +34,26 @@
 </div>
 
 <script type="text/javascript">
-    function verifyAge() {
-        let age = document.getElementById("age").value;
-
-        // CODE HERE !
-    }
+//     function verifyAge() {
+//         let age = document.getElementById("age").value;
+//         if (age >= 18) {
+//             alert('Bienvenue sur le site')
+//   } 
+//   else {
+//     alert('Vous devez être majeur pour accèder au site !')
+//   }
+//         // CODE HERE !
+//     }
+const MAJORITY = 18;
+function verifyAge() {
+    let age = document.getElementById("age").value;
+        if (age >= MAJORITY) {
+            alert("Bienvenue sur le site");
+            else {
+                alert("Vous devez être majeur pour accèder au site");
+            }
+        }
+}
 </script>
 </body>
 </html>
